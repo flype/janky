@@ -268,3 +268,4 @@ Copying
 
 Copyright © 2011-2012, GitHub, Inc. See the `COPYING` file for license
 rights and limitations (MIT).
+
