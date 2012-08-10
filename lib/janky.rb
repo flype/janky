@@ -200,7 +200,7 @@ module Janky
     ChatService.setup(chat_name, chat_settings, chat_room)
 
     active_notifiers = [
-      Notifier::ChatService,
+      Notifier::ChatService.new(settings),
       Notifier::GithubPullRequestService.new(settings)
     ]
 

@@ -1,7 +1,12 @@
 module Janky
   module Notifier
     class ChatService
-      def self.completed(build)
+
+      def initialize(settings)
+        @settings = settings
+      end
+
+      def completed(build)
         status = build.green? ? "was successful" : "failed"
         color = build.green? ? "green" : "red"
 
@@ -19,7 +24,7 @@ module Janky
         ::Janky::ChatService.speak(message, build.room_id, {:color => color})
       end
 
-      def self.base_url
+      def base_url
         @settings['JANKY_BASE_URL']
       end
     end
