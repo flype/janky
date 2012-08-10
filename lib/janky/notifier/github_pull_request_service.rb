@@ -17,12 +17,13 @@ module Janky
             status = build.green? ? "was successful" : "failed"
             color = build.green? ? ":+1:" : ":-1:"
 
-            message = "%s Build (%s) %s (%ss) %s" % [
+            message = "%s Build (%s) %s (%ss) %s - %s" % [
               color,
               build.short_sha1,
               status,
               build.duration,
-              "#{base_url}#{build.number}/output"
+              "#{base_url}#{build.number}/output",
+              build.compare
             ]
 
             GitHub.comment_issue(repo.github_owner, repo.github_name, pull_request['number'], message)
