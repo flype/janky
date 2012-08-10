@@ -19,7 +19,7 @@ module Janky
         ::Janky::ChatService.speak(message, build.room_id, {:color => color})
       end
 
-      def base_url
+      def self.base_url
         @settings['JANKY_BASE_URL']
       end
     end
